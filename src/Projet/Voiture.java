@@ -1,8 +1,9 @@
 package Projet;
 
-public class Voiture {
+public class Voiture extends Parking {
     String name;
     int temps;
+    int tarif;
 
     public void Voirue(String name, int temps) {
         this.name = name;
@@ -10,8 +11,11 @@ public class Voiture {
     }
     public void entrerParking(){
         //Ajouter une voiture, vérifier si le parking est plain (on appelera la fonction parking plein)
+        this.placeOccupe++;
+        this.placeVide--;
     }
-    public void payer(){
+    public int payer(){
       //Faire payer le client selon le temps où il est resté
+        return this.temps * this.tarif;
     }
 }

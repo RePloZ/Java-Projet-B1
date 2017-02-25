@@ -19,14 +19,21 @@ public class Parking {
 
     public void afficherinfo(){
         //Afficher les place restantes et les places vides
+        System.out.println("Il reste " +this.placeVide+ "place restantes");
+        System.out.println("Il y a" +this.placeOccupe + "place(s) occupée(s)");
     }
-    public int parkingplain(){
+    public void parkingplain(){
         //Si le parking est plein, enlever la voiture qui vient de se mettre et mettre un message d'erreur.
+        if (placeVide == 0 && placeHandicape == 0){
+
+        }
     }
     public void voitureRestante(){
         //Afficher le nombre de voiture restante
+        System.out.println("Il reste " +this.placeVide+ "place restantes");
     }
     public void placeOccupe(){
-        //Afficher le nombre de place occupé
+        //Afficher le nombre de place occupée
+        System.out.println("Il y a" + this.placeOccupe + "place(s) occupée(s)");
     }
 }
