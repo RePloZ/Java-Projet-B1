@@ -39,7 +39,11 @@ public class Voiture {
         this.sortie = sortie;
     }
     public void garer(Object Voiture, int positionX, int positionY){
-    	setParking(positionX, postionY, Voiture);
+    	if (PlaceRestante>0){    	
+    		setParking(positionX, postionY, Voiture);
+        }
+    	else {
+    		System.out.println("Il n'y a plus de place");
+    	}
     }
-
 }
