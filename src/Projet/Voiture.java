@@ -38,6 +38,8 @@ public class Voiture {
     public void setSortie(Date sortie) {
         this.sortie = sortie;
     }
-
+    public void garer(Object Voiture, int positionX, int positionY){
+    	setParking(positionX, postionY, Voiture);
+    }
 
 }
