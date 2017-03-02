@@ -53,7 +53,7 @@ public class Voiture {
 
     	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == null){
     		Parking.setParking(pPositionX, pPositionY, Voiture);
-    		Parking.setplaceRestante(Parking.getplaceRestante());
+    		Parking.setplaceRestante(Parking.getplaceRestante()++);
         }
     	else {
     		System.out.println("Il n'y a plus de place");
