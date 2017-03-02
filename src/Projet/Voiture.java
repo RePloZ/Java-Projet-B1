@@ -21,7 +21,7 @@ public class Voiture {
         this.positionX = pPositionX;
         this.positionY = pPositionY;
     }
-    //fonction qui renvoie l'entrï¿½e
+    //fonction qui renvoie la date d'entrée
     public Date getEntree() {
         return entree;
     }
@@ -53,6 +53,7 @@ public class Voiture {
 
     	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == null){
     		Parking.setParking(pPositionX, pPositionY, Voiture);
+    		Parking.setplaceRestante(Parking.getplaceRestante());
         }
     	else {
     		System.out.println("Il n'y a plus de place");
