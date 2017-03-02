@@ -1,8 +1,10 @@
+package Projet;
+
 import javax.swing.JFrame;
  
 public class Fenetre extends JFrame {
   public Fenetre(){
-    this.setTitle("Ma première fenêtre Java");
+    this.setTitle("Ma premiï¿½re fenï¿½tre Java");
     this.setSize(500, 500);
     this.setLocationRelativeTo(null);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);             
