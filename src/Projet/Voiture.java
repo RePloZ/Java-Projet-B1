@@ -29,9 +29,6 @@ public class Voiture {
     public Date getSortie() {
         return sortie;
     }
-    public void setSortie(Date pSortie){
-    	this.sortie = pSortie;
-    }
     //fonction qui renvoie la position verticale
     public int getPositionX() {
         return positionX;
@@ -52,23 +49,21 @@ public class Voiture {
     	
     }
     */
-    public void garer(Object Voiture, int pPositionX,int pPositionY){
+    /*
+    public void garer(Object Voiture, int pPositionX,int pPositionY) {
 
-    	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == null){
-    		Parking.setParking(pPositionX, pPositionY, Voiture);
-    		Parking.setplaceRestante(Parking.getplaceRestante());
+        if (Parking.getPlaceRestante() > 0 && Parking.getParking(pPositionX, pPositionX) == null) {
+            Parking.setParking(pPositionX, pPositionY, Voiture);
+            Parking.set(Parking.getPlaceRestante() + 1);
+        } else {
+            System.out.println("Il n'y a plus de place");
         }
-    	else {
-    		System.out.println("Il n'y a plus de place");
-    	}
-     //PAIEMENT
-	public void payer()
-		Date temps = this.getSortie-this.getEntree;
-		int montant= (int)temps * 5;
-		
-	}
- 
     }
-   
-
+    */
+     //PAIEMENT
+	public int payer(){
+		Date temps = this.getSortie() - this.getEntree();
+		int montant= (int)temps * 5;
+		return montant;
+	}
 }

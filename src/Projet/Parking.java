@@ -13,7 +13,7 @@ public class Parking {
     public static Object getParking(int pPositionX, int pPositionY){
         return parking[pPositionX][pPositionY];
     }
-    public void setPlaceRestante(int placeRestante) {
-        this.placeRestante = placeRestante;
+    public static void setPlaceRestante(int pPlaceRestante) {
+        placeRestante = pPlaceRestante;
     }
 }
