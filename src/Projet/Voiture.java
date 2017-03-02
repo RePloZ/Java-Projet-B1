@@ -14,7 +14,7 @@ public class Voiture {
 
 
     //constructeur
-    public Voiture(String pNameCar, String pMarqueCar, String pImmatriculationCar, int pPositionX, int pPositionY){
+    public Voiture(String pNameCar, String pMarqueCar, int pPositionX, int pPositionY){
         this.nameCar = pNameCar;
         this.marqueCar = pMarqueCar;
         this.entree = new Date();
@@ -28,6 +28,9 @@ public class Voiture {
     //fonction qui renvoie la sortie
     public Date getSortie() {
         return sortie;
+    }
+    public void setSortie(Date pSortie){
+    	this.sortie = pSortie;
     }
     //fonction qui renvoie la position verticale
     public int getPositionX() {
@@ -59,8 +62,9 @@ public class Voiture {
     		System.out.println("Il n'y a plus de place");
     	}
      //PAIEMENT
-	public void payer(){
-		Date temps = this.getSortie-this.getEntree
+	public void payer()
+		Date temps = this.getSortie-this.getEntree;
+		int montant= (int)temps * 5;
 		
 	}
  
