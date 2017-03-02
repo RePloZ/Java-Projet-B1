@@ -7,8 +7,8 @@ public class Parking {
     public void setParking(int pPositionX, int pPositionY, Object Voiture) {
         this.parking[pPositionX][pPositionY] = Voiture;
     }
-    public static int getPlaceRestante() {
-        return placeRestante;
+    public int getPlaceRestante() {
+        return this.placeRestante;
     }
     public void setPlaceRestante(int placeRestante) {
         this.placeRestante = placeRestante;
