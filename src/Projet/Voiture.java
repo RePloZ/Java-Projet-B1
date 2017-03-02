@@ -21,7 +21,7 @@ public class Voiture {
         this.positionX = pPositionX;
         this.positionY = pPositionY;
     }
-    //fonction qui renvoie l'entrée
+    //fonction qui renvoie l'entrï¿½e
     public Date getEntree() {
         return entree;
     }
@@ -37,12 +37,21 @@ public class Voiture {
     public int getPositionY() {
         return positionY;
     }
-    //fonction qui récupère la date de sortie
+    //fonction qui rï¿½cupï¿½re la date de sortie
     public void setSortie(Date sortie) {
         this.sortie = sortie;
     }
+<<<<<<< Updated upstream
     //Place Disponible
     public void placeDisponible(Object Voiture, int positionX, int positionY){
+=======
+    
+    public int Payer(Date entree, Date sortie) {
+    	int duree= Date sortie - Date entree;
+    	
+    }
+    public void garer(Object Voiture, int positionX, int positionY){
+>>>>>>> Stashed changes
     	if (PlaceRestante>0){    	
     		setParking(positionX, postionY, Voiture);
         }
@@ -53,3 +62,4 @@ public class Voiture {
    
 
 }
+>>>>>>> Stashed changes
