@@ -58,13 +58,12 @@ public class Voiture {
     	else {
     		System.out.println("Il n'y a plus de place");
     	}
-     
-	
-    
-    
-    
-    
-    
+     //PAIEMENT
+	public void payer(){
+		Date temps = this.getSortie-this.getEntree
+		
+	}
+ 
     }
    
 
