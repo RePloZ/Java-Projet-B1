@@ -13,7 +13,7 @@ public class Voiture {
     private int positionY;
 
 
-    //
+    //constructeur
     public Voiture(String pNameCar, String pMarqueCar, String pImmatriculationCar, int pPositionX, int pPositionY){
         this.nameCar = pNameCar;
         this.marqueCar = pMarqueCar;
@@ -21,27 +21,23 @@ public class Voiture {
         this.positionX = pPositionX;
         this.positionY = pPositionY;
     }
-    //
+    //fonction qui renvoie l'entrée
     public Date getEntree() {
         return entree;
     }
-    //
+    //fonction qui renvoie la sortie
     public Date getSortie() {
         return sortie;
     }
-    //
-    public String getImmatriculationCar() {
-        return immatriculationCar;
-    }
-    //
+    //fonction qui renvoie la position verticale
     public int getPositionX() {
         return positionX;
     }
-    //
+    //fonction qui renvoie la position horizontale
     public int getPositionY() {
         return positionY;
     }
-    //
+    //fonction qui récupère la date de sortie
     public void setSortie(Date sortie) {
         this.sortie = sortie;
     }
@@ -54,24 +50,6 @@ public class Voiture {
     		System.out.println("Il n'y a plus de place");
     	}
     }
-    //
-
-    //
-
-    //
-
-    //
-
-    //
-
-    //
-
-    //
-
-    //
-
-    //
-
-    //
+   
 
 }
