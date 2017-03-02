@@ -1,4 +1,4 @@
-package Projet;
+package 	Projet;
 
 public class Parking {
     private static Object parking[][] = new Object[22][22];
