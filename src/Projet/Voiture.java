@@ -11,13 +11,14 @@ public class Voiture {
     private Date sortie;
     private int positionX;
     private int positionY;
+    private SimpleDateFormat hms = new SimpleDateFormat("Hmmss");
 
 
     //constructeur
     public Voiture(String pNameCar, String pMarqueCar, int pPositionX, int pPositionY){
         this.nameCar = pNameCar;
         this.marqueCar = pMarqueCar;
-        this.entree = new Date();
+        this.entree = hms.format(new Date());
         this.positionX = pPositionX;
         this.positionY = pPositionY;
     }
@@ -45,7 +46,7 @@ public class Voiture {
     public void placeDisponible(Object Voiture, int positionX, int positionY){}
     /*
     public int Payer(Date entree, Date sortie) {
-    	int duree= Date sortie - Date entree;
+    	int duree= Date sortie s- Date entree;
     	
     }
     */
@@ -61,11 +62,11 @@ public class Voiture {
     }
     */
      //PAIEMENT
-    /*
-	public int payer(){
+	public void payer(){
+	    sortie = new Date();
+
 		Date temps = this.getSortie() - this.getEntree();
 		int montant= (int)temps * 5;
 		return montant;
 	}
-	*/
 }
