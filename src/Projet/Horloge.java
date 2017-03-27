@@ -42,8 +42,5 @@ public class Horloge {
         public int getLeastMaximum(int field) {
             return 0;
         }
-
-        set
     };
-    MonCalendrier.set(1, 1, 1, 0, 0);
 }

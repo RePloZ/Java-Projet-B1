@@ -61,9 +61,11 @@ public class Voiture {
     }
     */
      //PAIEMENT
+    /*
 	public int payer(){
 		Date temps = this.getSortie() - this.getEntree();
 		int montant= (int)temps * 5;
 		return montant;
 	}
+	*/
 }

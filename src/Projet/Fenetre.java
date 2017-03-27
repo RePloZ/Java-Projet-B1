@@ -11,7 +11,5 @@ public class Fenetre extends JFrame {
     this.setVisible(true);
     this.setAlwaysOnTop(false);
     this.setUndecorated(true);
-    }
- 
-  
+  }
 }
