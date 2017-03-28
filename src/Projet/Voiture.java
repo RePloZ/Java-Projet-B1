@@ -43,22 +43,25 @@ public class Voiture {
     }
     //Place Disponible
     public void placeDisponible(Object Voiture, int positionX, int positionY){}
-    /*
-    public int Payer(Date entree, Date sortie) {
+   
+    public int payer(Date entree, Date sortie) {
     	int duree= Date sortie - Date entree;
     	
     }
-    */
+    
     public void garer(Object Voiture, int pPositionX,int pPositionY){
 
     	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == null){
     		Parking.setParking(pPositionX, pPositionY, Voiture);
-    		Parking.setplaceRestante(Parking.getplaceRestante()++);
+    		Parking.setplaceRestante(Parking.getplaceRestante()-1);
         }
     	else {
     		System.out.println("Il n'y a plus de place");
     	}
     }
-   
-
+    public void quitterParking(){
+    	payer();
+    	System.out.println("La voiture quitte le parking!");
+    	Parking.setParking(this.positionX, this.positionY, '\0');
+    }
 }
