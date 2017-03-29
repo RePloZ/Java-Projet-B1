@@ -2,7 +2,7 @@ package Projet;
 
 public class Main {
 	public static void main(String[] args) {
-		Fenetre fen = new Fenetre();
+		Voiture voi = new Voiture ("sarah", "ferrari", 10, 10);
 	}
 
 }
