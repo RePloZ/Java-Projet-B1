@@ -1,11 +1,11 @@
 package Projet;
 
 public class Parking {
-    private Object parking[][] = new Object[22][22];
-    private int placeRestante = 0;
+    private static Object parking[][] = new char[22][22];
+    private static int placeRestante = 0;
 
-    public void setParking(int pPositionX, int pPositionY, Object Voiture) {
-        this.parking[pPositionX][pPositionY] = Voiture;
+    public static void setParking(int pPositionX, int pPositionY, char Voiture) {
+        parking[pPositionX][pPositionY] = Voiture;
     }
     public int getPlaceRestante() {
         return this.placeRestante;
