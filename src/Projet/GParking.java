@@ -16,7 +16,10 @@ public class GParking extends JPanel {
                     g.setColor(Color.red);
                     g.fillRect(x,y, 20,30);
                 }
+                j++;
             }
+            i++;
+            j=0;
         }
 
     }

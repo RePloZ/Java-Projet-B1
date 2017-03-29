@@ -19,21 +19,18 @@ public class Voiture {
         this.marqueCar = pMarqueCar;
         this.entree = new Date();
     }
-
+    //Fonction qui renvoie la marque de la voiture
+    public String getMarqueCar() {
+        return marqueCar;
+    }
     //Fonction qui renvoie la date d'entrée
     public Date getEntree() {
         return entree;
     }
-
-    //fonction qui renvoie la sortie
-    public Date getSortie() {
-        return sortie;
-    }
-
+    //Fonction qui récupère le nom de la voiture
     public String getNameCar(){
         return this.nameCar;
     }
-
     //fonction qui renvoie la position verticale
     public int getPositionX() {
         return positionX;
@@ -53,20 +50,25 @@ public class Voiture {
     //fonction qui récupère la date de sortie
 
     public void garer() {
+        boolean ok = false;
         Scanner parametre = new Scanner(System.in);
-        if (Parking.combienVoiture() < 22*22) {
-            System.out.println("Quelle est la position X du parking ?");
-            setPositionX(parametre.nextInt());
-            System.out.println("Quelle est la position Y du parking ?");
-            setPositionY(parametre.nextInt());
-            if (!Parking.getParking(positionX, positionY)){
-                Parking.setParking(positionX, positionY, false);
-                Parking.setPlaceRestante(Parking.getPlaceRestante() - 1);
+        while (!ok){
+            if (Parking.combienVoiture() < 22*22) {
+                System.out.println("Quelle est la position X du parking ?");
+                setPositionX(parametre.nextInt());
+                System.out.println("Quelle est la position Y du parking ?");
+                setPositionY(parametre.nextInt());
+                if (!Parking.getParking(positionX, positionY)){
+                    ok=true;
+                    Parking.setParking(positionX, positionY, true);
+                    Parking.setPlaceRestante(Parking.getPlaceRestante() - 1);
+                } else {
+                    System.out.println("La place est prise a cet emplacement");
+                }
             } else {
-                System.out.println("La place est prise a cet emplacement");
+                ok=true;
+                System.out.println("Il n'y a plus de place");
             }
-        } else {
-            System.out.println("Il n'y a plus de place");
         }
     }
 
@@ -92,6 +94,9 @@ public class Voiture {
             heureEcoulee++;
         }
         int montant = heureEcoulee * 5;
+        if (montant==0){
+            System.out.println("Vous êtes restés moins d'une minute, c'es gratuit !");
+        }
         System.out.println("le montant � payer est :" + montant);
     }
 }
