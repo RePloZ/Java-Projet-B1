@@ -7,6 +7,7 @@ public class Main {
     private ArrayList<String> NomVoiture = new ArrayList<>();
     public static void main(String[] args) {
         Fenetre fen = new Fenetre();
+        Parking.initialiseTableau();
         /*TODO		 Boucle qui va se repeter tant que le jeu n'est pas terminer
 		TODO Demander à l'utilisateur si il veut :
 		    * TODO - Entrer une voiture dans le parking;
@@ -49,6 +50,8 @@ public class Main {
         System.out.println("Ecrivez l'immatriculation de la voiture");
         immatriculation = parametre.nextLine();
         Voiture blabla = new Voiture(nameCar, marqueCar, immatriculation);
+        System.out.println("Où voulez vous vous garer");
+        blabla.garer();
     }
     //TODO Suppression automatique d'objet
     public static void quitterleparking(){
