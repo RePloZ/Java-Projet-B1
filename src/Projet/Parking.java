@@ -1,16 +1,27 @@
 package Projet;
 
 public class Parking {
-    private static Object parking[][] = new char[22][22];
+    private static boolean parking[][] = new boolean[22][22];
     private static int placeRestante = 0;
 
-    public static void setParking(int pPositionX, int pPositionY, char Voiture) {
-        parking[pPositionX][pPositionY] = Voiture;
+    public static void initialiseTableau(){
+        for (int i=0; i<22; i++){
+            for (int j=0; i<22; j++){
+                setParking(i,j,false);
+            }
+        }
     }
-    public int getPlaceRestante() {
-        return this.placeRestante;
+
+    public static void setParking(int pPositionX, int pPositionY, boolean pVoiture) {
+        parking[pPositionX][pPositionY] = pVoiture;
     }
-    public void setPlaceRestante(int placeRestante) {
-        this.placeRestante = placeRestante;
+    public static boolean getParking(int pPositionX, int pPositionY){
+        return parking[pPositionX][pPositionY];
+    }
+    public static int getPlaceRestante() {
+        return placeRestante;
+    }
+    public static void setPlaceRestante(int pPlaceRestante) {
+        placeRestante = pPlaceRestante;
     }
 }
