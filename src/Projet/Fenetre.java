@@ -13,6 +13,4 @@ public class Fenetre extends JFrame {
     this.setAlwaysOnTop(false);
     this.setUndecorated(true);
     }
- 
-  
 }
