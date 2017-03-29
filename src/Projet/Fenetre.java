@@ -1,7 +1,8 @@
 package Projet;
 
 import javax.swing.JFrame;
- 
+import java.awt.*;
+
 public class Fenetre extends JFrame {
   public Fenetre(){
     this.setTitle("Ma premi�re fen�tre Java");

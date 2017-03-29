@@ -1,5 +1,6 @@
 package Projet;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Voiture {
@@ -12,13 +13,12 @@ public class Voiture {
     private int positionX;
     private int positionY;
 
-
     //constructeur
     public Voiture(String pNameCar, String pMarqueCar, String pImmatriculationCar){
-        this.nameCar = pNameCar;
-        this.marqueCar = pMarqueCar;
-        this.entree = new Date();
-      this.immatriculationCar = pImmatriculationCar;
+    this.nameCar = pNameCar;
+    this.marqueCar = pMarqueCar;
+    this.entree = new Date();
+    this.immatriculationCar = pImmatriculationCar;
     }
   //Fonction qui renvoie la date d'entrÃ©e 
     public Date getEntree() {
@@ -37,22 +37,62 @@ public class Voiture {
         return positionY;
     }
     //fonction qui rÃ©cupÃ¨re la date de sortie
-    public void setSortie(Date sortie) {
-        this.sortie = sortie;
-    }
-  public void garer(Object voiture, int pPositionX,int pPositionY){
-     
-    	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == null){
-    		Parking.setParking(pPositionX, pPositionY, Voiture);
-    		Parking.setplaceRestante(Parking.getplaceRestante()-1);
+
+  public void garer(boolean pVoiture, int pPositionX,int pPositionY){
+    	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == false){
+    		Parking.setParking(pPositionX, pPositionY, pVoiture);
+    		Parking.setPlaceRestante(Parking.getPlaceRestante()-1);
       } 
       else {
-    		System.out.println("La place est prise a cette emplacement");
+    		System.out.println("La place est prise a cet emplacement");
     	}
   }    
   
     public void quitterParking(){
     	payer();
-    	System.out.println("La voiture" + this.nameCar + "quitte le parking!");
-    	Parking.setParking(this.positionX, this.positionY, '\0');
+    	System.out.println("La voiture " + this.nameCar + " quitte le parking!");
+    	Parking.setParking(this.positionX, this.positionY, true);
     }
+
+    
+    //paiement 
+    public void payer(){
+
+    }
+    // obtenir le temps écoulé
+    sortie = new Date();
+    
+    SimpleDateFormat heure = new SimpleDateFormat("H");
+    SimpleDateFormat minute = new SimpleDateFormat("mm");
+    
+    String heureEntree = heure.format(entree);
+    String heureSortie = heure.format(sortie);
+
+    String minuteEntree = minute.format(entree); 
+    String minuteSortie = minute.format(sortie);
+    
+    int heureEcoulee = Integer.parseInt(heureEntree) - Integer.parseInt(heureSortie);
+    int minuteEcoulee = Integer.parseInt(minuteEntree) - Integer.parseInt(minuteSortie);
+    
+   
+    
+    if (minuteEcoulee>0){
+    	
+    	heureEcoulee++;
+    	
+    }
+    
+    int montant = heureEcoulee * 5 ; 
+    
+    System.out.println("le montant à payer est :"+montant);
+    
+    
+    /* reccuperer deux valeurs (les heures et les minutes)
+     * 
+     * si les minutes sont >0 ==> heure ++
+     * montant = heure * 5
+ */   
+   
+    
+}
+}
