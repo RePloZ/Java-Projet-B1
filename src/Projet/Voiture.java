@@ -37,22 +37,24 @@ public class Voiture {
         return positionY;
     }
     //fonction qui récupère la date de sortie
-    public void setSortie(Date sortie) {
-        this.sortie = sortie;
-    }
-  public void garer(Object voiture, int pPositionX,int pPositionY){
-     
-    	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == null){
-    		Parking.setParking(pPositionX, pPositionY, Voiture);
-    		Parking.setplaceRestante(Parking.getplaceRestante()-1);
+
+  public void garer(boolean pVoiture, int pPositionX,int pPositionY){
+    	if (Parking.getPlaceRestante()>0 && Parking.getParking(pPositionX,pPositionX) == false){
+    		Parking.setParking(pPositionX, pPositionY, pVoiture);
+    		Parking.setPlaceRestante(Parking.getPlaceRestante()-1);
       } 
       else {
-    		System.out.println("La place est prise a cette emplacement");
+    		System.out.println("La place est prise a cet emplacement");
     	}
   }    
   
     public void quitterParking(){
     	payer();
-    	System.out.println("La voiture" + this.nameCar + "quitte le parking!");
-    	Parking.setParking(this.positionX, this.positionY, '\0');
+    	System.out.println("La voiture " + this.nameCar + " quitte le parking!");
+    	Parking.setParking(this.positionX, this.positionY, true);
     }
+
+    public void payer(){
+
+    }
+}
