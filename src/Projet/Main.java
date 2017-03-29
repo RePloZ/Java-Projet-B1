@@ -9,12 +9,15 @@ public class Main {
     public static void main(String[] args) {
         Fenetre fen = new Fenetre();
         Parking.initialiseTableau();
-        /*TODO		 Boucle qui va se repeter tant que le jeu n'est pas terminer
-		TODO Demander à l'utilisateur si il veut :
-		    * TODO - Entrer une voiture dans le parking;
-		    * TODO - Faire sortir une voiture dans le parking;
-		    * TODO - Quitter le programme;
-		*/
+        /*
+
+        * TODO Boucle qui va se repeter tant que le jeu n'est pas terminer
+        * TODO Demander à l'utilisateur si il veut :
+        * TODO - Entrer une voiture dans le parking;
+        * TODO - Faire sortir une voiture dans le parking;
+        * TODO - Quitter le programme;
+
+        */
         Scanner parametre = new Scanner(System.in);
         int choixJoueur;
         boolean recommencer = true;
@@ -58,5 +61,4 @@ public class Main {
     public static void quitterleparking(){
 
     }
->>>>>>> master
 }
