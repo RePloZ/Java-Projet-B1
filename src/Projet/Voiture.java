@@ -75,7 +75,7 @@ public class Voiture {
         System.out.println("La voiture " + this.nameCar + " quitte le parking!");
         Parking.setParking(this.positionX, this.positionY, true);
     }
-    // obtenir le temps écoulé
+    // obtenir le temps ï¿½coulï¿½
     //paiement
     public void payer() {
         sortie = new Date();
@@ -92,6 +92,6 @@ public class Voiture {
             heureEcoulee++;
         }
         int montant = heureEcoulee * 5;
-        System.out.println("le montant à payer est :" + montant);
+        System.out.println("le montant ï¿½ payer est :" + montant);
     }
 }
