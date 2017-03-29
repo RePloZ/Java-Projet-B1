@@ -4,20 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-
-    private ArrayList<String> NomVoiture = new ArrayList<>();
+    private static ArrayList<Voiture> NomVoiture = new ArrayList<>();
     public static void main(String[] args) {
-        Fenetre fen = new Fenetre();
+        Fenetre fen = new Fenetre();;
         Parking.initialiseTableau();
-        /*
-
-        * TODO Boucle qui va se repeter tant que le jeu n'est pas terminer
-        * TODO Demander à l'utilisateur si il veut :
-        * TODO - Entrer une voiture dans le parking;
-        * TODO - Faire sortir une voiture dans le parking;
-        * TODO - Quitter le programme;
-
-        */
         Scanner parametre = new Scanner(System.in);
         int choixJoueur;
         boolean recommencer = true;
@@ -29,10 +19,12 @@ public class Main {
                         "\n 3 - Quitter le programme" +
                         "\n Attention, votre choix ne peut être compris qu'entre 1 et 3");
                 choixJoueur = parametre.nextInt();
-            } while (choixJoueur>0 && choixJoueur<4);
+
+            } while (!(choixJoueur>0 && choixJoueur<4));
             switch (choixJoueur) {
                 case 1:
                     entrerdansleparking();
+                    fen.miseajour();
                     break;
                 case 2:
                     break;
@@ -51,14 +43,33 @@ public class Main {
         nameCar = parametre.nextLine();
         System.out.println("Ecrivez la marque de la voiture");
         marqueCar = parametre.nextLine();
-        System.out.println("Ecrivez l'immatriculation de la voiture");
-        immatriculation = parametre.nextLine();
-        Voiture blabla = new Voiture(nameCar, marqueCar, immatriculation);
-        System.out.println("Où voulez vous vous garer");
-        blabla.garer();
+        Voiture nine = new Voiture(nameCar, marqueCar);
+        nine.garer();
+        NomVoiture.add(nine);
+        //NomVoiture.contains(nine.getSortie());
+        //appel de la fonction qui donne le nombre de voiture actuellement dans le Parking
+        //que tu stock dans une variable (nombreVoiture)
+        // puis quand tu créé, tu nommes ta voiture dans un String = "voiture" + nombreVoiture;
     }
     //TODO Suppression automatique d'objet
     public static void quitterleparking(){
-
+        boolean ok = false;
+        Scanner parametre = new Scanner(System.in);
+        System.out.println("Donner le nom de la voiture");
+        String nomVoiture = parametre.nextLine();
+        System.out.println("Donner la position X de votre voiture");
+        int positionX = parametre.nextInt();
+        System.out.println("Donner la position Y de votre voiture");
+        int positionY = parametre.nextInt();
+        for (Voiture objet:NomVoiture) {
+            if(objet.getPositionX()==positionX && objet.getPositionY()==positionY && objet.getNameCar().equals(nomVoiture)){
+                Parking.setParking(objet.getPositionX(), objet.getPositionY(), false);
+                ok = true;
+                break;
+            }
+        }
+        if (!ok){
+            System.out.println("Aucune voiture n'a été trouvé à cette emplacement");
+        }
     }
 }

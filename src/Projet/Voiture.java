@@ -8,18 +8,16 @@ public class Voiture {
     //Variables
     private String nameCar;
     private String marqueCar;
-    private String immatriculationCar;
     private Date entree;
     private Date sortie;
     private int positionX;
     private int positionY;
 
     //constructeur
-    public Voiture(String pNameCar, String pMarqueCar, String pImmatriculationCar) {
+    public Voiture(String pNameCar, String pMarqueCar) {
         this.nameCar = pNameCar;
         this.marqueCar = pMarqueCar;
         this.entree = new Date();
-        this.immatriculationCar = pImmatriculationCar;
     }
 
     //Fonction qui renvoie la date d'entrÃ©e
@@ -30,6 +28,10 @@ public class Voiture {
     //fonction qui renvoie la sortie
     public Date getSortie() {
         return sortie;
+    }
+
+    public String getNameCar(){
+        return this.nameCar;
     }
 
     //fonction qui renvoie la position verticale
@@ -52,15 +54,19 @@ public class Voiture {
 
     public void garer() {
         Scanner parametre = new Scanner(System.in);
-        if (Parking.getPlaceRestante() > 0 && Parking.getParking(positionX,positionY) == false) {
+        if (Parking.combienVoiture() < 22*22) {
             System.out.println("Quelle est la position X du parking ?");
             setPositionX(parametre.nextInt());
             System.out.println("Quelle est la position Y du parking ?");
             setPositionY(parametre.nextInt());
-            Parking.setParking(positionX, positionY, false);
-            Parking.setPlaceRestante(Parking.getPlaceRestante() - 1);
+            if (!Parking.getParking(positionX, positionY)){
+                Parking.setParking(positionX, positionY, false);
+                Parking.setPlaceRestante(Parking.getPlaceRestante() - 1);
+            } else {
+                System.out.println("La place est prise a cet emplacement");
+            }
         } else {
-            System.out.println("La place est prise a cet emplacement");
+            System.out.println("Il n'y a plus de place");
         }
     }
 
@@ -69,8 +75,6 @@ public class Voiture {
         System.out.println("La voiture " + this.nameCar + " quitte le parking!");
         Parking.setParking(this.positionX, this.positionY, true);
     }
-
-
     // obtenir le temps écoulé
     //paiement
     public void payer() {
